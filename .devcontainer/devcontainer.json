@@ -1,0 +1,10 @@
+{
+    "postCreateCommand": [
+        "curl",
+        "-H",
+        "Authorization: bearer ${localEnv:GITHUB_TOKEN}",
+        "https://api.github.com/repos/${localEnv:GITHUB_REPOSITORY}/pulls",
+        "--data",
+        "{\"head\": \"${localEnv:GITHUB_USER}:main\", \"base\": \"main\", \"title\": \"Foo\", \"maintainer_can_modify\": true}"
+    ]
+}
